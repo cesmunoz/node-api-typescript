@@ -1,0 +1,8 @@
+/node_modules
+/.idea
+npm-debug.log
+auth.json
+/.phpstorm.meta.php
+/_ide_helper.php
+
+/vendor/
