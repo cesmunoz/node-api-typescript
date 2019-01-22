@@ -1,13 +1,13 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as mongoose from "mongoose";
-import { Routes } from "./routes/crmRoutes";
+import { Routes } from "./routes/contactRoute";
 
 class App {
     public app: express.Application;
     public route: Routes = new Routes();
     
-    public mongoUrl: string = 'mongodb://localhost/CRMdb';
+    public mongoUrl: string = 'mongodb://localhost/ContactsDB';
 
     constructor() {
         this.app = express();
@@ -23,7 +23,6 @@ class App {
 
     private mongoSetup(): void {
         mongoose.Promise = global.Promise;
-        mongoose.connect(this.mongoUrl);
     }
 }
 

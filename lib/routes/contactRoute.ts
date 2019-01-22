@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ContactController } from "../controllers/crmController";
+import { ContactController } from "../controllers/contactController";
 
 export class Routes {
     public contactControlller: ContactController = new ContactController();
