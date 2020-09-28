@@ -46,7 +46,7 @@ export class ContactController {
     }
 
     public deleteContact(req: Request, res: Response) {
-        Contact.remove({_id: req.params.id }, (err, contat)=>{
+        Contact.remove({_id: req.params.id }, (err, contact)=>{
             if(err){
                 res.status(500).send(err);
             }
