@@ -22,7 +22,6 @@
   "homepage": "https://github.com/cesmunoz/typescript#readme",
   "dependencies": {
     "@types/express": "^4.16.0",
-    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "gulp": "^4.0.0",
     "gulp-nodemon": "^2.4.2",

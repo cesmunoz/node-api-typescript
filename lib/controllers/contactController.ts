@@ -5,52 +5,50 @@ import { Request, Response } from 'express';
 const Contact = mongoose.model('Contact', ContactSchema);
 
 export class ContactController {
-    public getContacts(req: Request, res: Response) {
-        Contact.find({}, (err, contact) => {
-            if (err) {
-                res.status(500).send(err);
-            }
-            res.json(contact);
-        })
+    public async getContacts(req: Request, res: Response) {
+        try {
+            const contacts = await Contact.find({});
+            res.status(200).json(contacts);
+        } catch(err) {
+            res.status(500).send(err); 
+        }
     }
 
-    public addNewContact(req: Request, res: Response) {
+    public async addNewContact(req: Request, res: Response) {
         let newContact = new Contact(req.body);
 
-        newContact.save((err, contact) => {
-            if (err) {
-                res.status(500).send(err);
-            }
-            else {
-                res.json(contact);
-            }
-        });
+        try {
+            const contact = await newContact.save();
+            res.status(200).json(contact);
+        } catch(err) {
+            res.status(500).send(err);
+        }
     }
 
-    public getContactById(req: Request, res: Response) {
-        Contact.findById(req.params.id, (err, contact) => {
-            if (err) {
-                res.status(500).send(err);
-            }
-            res.json(contact);
-        });
+    public async getContactById(req: Request, res: Response) {
+        try {
+            const contact = await Contact.findById(req.params.id);
+            res.status(200).json(contact);
+        } catch (err) {
+            res.status(500).send(err);
+        }
     }
 
-    public updateContact(req: Request, res: Response) {
-        Contact.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, contact) => {
-            if (err) {
-                res.status(500).send(err);
-            }
-            res.json(contact);
-        })
+    public async updateContact(req: Request, res: Response) {
+        try {
+            const contact = await Contact.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true });
+            res.status(200).json(contact);
+        } catch(err) {
+            res.status(500).send(err);
+        }
     }
 
-    public deleteContact(req: Request, res: Response) {
-        Contact.remove({_id: req.params.id }, (err, contact)=>{
-            if(err){
-                res.status(500).send(err);
-            }
-            res.json({ message: 'Successfully deleted contact!'})
-        });
+    public async deleteContact(req: Request, res: Response) {
+        try {
+            await Contact.remove({_id: req.params.id });
+            res.status(200).json({ message: 'Successfully deleted contact!'});
+        } catch(err) {
+            res.status(500).send(err);
+        }
     }
 }

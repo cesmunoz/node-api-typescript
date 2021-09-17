@@ -6,7 +6,7 @@ export class Routes {
     
     public routes(app): void {
         app.route('/')
-            .get((req: Request, res: Response) => {
+            .get((_req: Request, res: Response) => {
                 let response = {
                     message: 'GET Response Successfull'
                 }
