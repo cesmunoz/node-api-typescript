@@ -1731,11 +1731,14 @@ inherits@2.0.3:
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 ini@^1.3.4, ini@^1.3.5, ini@~1.3.0:
 =======
 >>>>>>> 7bb94a1 (fix: style and dependencies)
+=======
+>>>>>>> c7ef979 (fix: yarn dependencies)
 ini@1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.7.tgz#a09363e1911972ea16d7a8851005d84cf09a9a84"
@@ -1743,9 +1746,12 @@ ini@1.3.7:
 
 ini@^1.3.4, ini@~1.3.0:
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> afd7795 (fix: style and dependencies)
 >>>>>>> 7bb94a1 (fix: style and dependencies)
+=======
+>>>>>>> c7ef979 (fix: yarn dependencies)
   version "1.3.8"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
   integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
