@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { ContactController } from "../controllers/contactController";
 
 export class Routes {
-    public contactControlller: ContactController = new ContactController();
+    public contactController: ContactController = new ContactController();
     
     public routes(app): void {
         app.route('/')
@@ -14,12 +14,12 @@ export class Routes {
             });
 
         app.route('/contact')
-            .get(this.contactControlller.getContacts)
-            .post(this.contactControlller.addNewContact);
+            .get(this.contactController.getContacts)
+            .post(this.contactController.addNewContact);
 
         app.route('/contact/:id')
-            .get(this.contactControlller.getContactById)
-            .put(this.contactControlller.updateContact)
-            .delete(this.contactControlller.deleteContact)
+            .get(this.contactController.getContactById)
+            .put(this.contactController.updateContact)
+            .delete(this.contactController.deleteContact)
     }
 }
