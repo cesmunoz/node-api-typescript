@@ -8,7 +8,7 @@ export class Routes {
         app.route('/')
             .get((_req: Request, res: Response) => {
                 let response = {
-                    message: 'GET Response Successfull'
+                    message: 'GET Response Successful'
                 }
                 res.status(200).send(response);
             });
